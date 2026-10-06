@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
     // 1. Preloader Animation
     const preloader = document.getElementById('premium-preloader');
     if (preloader) {
-        // gsap.to(preloader, {
+        gsap.to(preloader, {
             opacity: 0,
             duration: 0.5,
             delay: 0.5,
@@ -29,7 +29,11 @@ window.addEventListener('load', () => {
             { scale: 1.1, opacity: 0 },
             { scale: 1, opacity: 1, duration: 2, ease: "power2.out", delay: 0 }
         );
-        gsap.from(".hero-anim", { y: 50, opacity: 0, duration: 1, stagger: 0.2, delay: 0, ease: "power3.out" });
+        
+        gsap.from(".hero-anim.title", { y: 50, opacity: 0, duration: 1, ease: "power3.out" });
+        gsap.from(".hero-anim.description", { y: 50, opacity: 0, duration: 1, delay: 0.3, ease: "power3.out" });
+        gsap.from(".hero-anim a.btn", { y: 50, scale: 0.9, opacity: 0, duration: 1, delay: 0.5, ease: "back.out(1.5)" });
+
         gsap.from(".hero-anim-img", { y: 50, scale: 0.9, opacity: 0, duration: 1, delay: 0, ease: "back.out(1.5)" });
         
         gsap.to(".hero-bg", {
@@ -79,7 +83,7 @@ window.addEventListener('load', () => {
 
     // C. Images → fade-right / fade-left
     // Images appearing from left (fade-right)
-    const fadeRightImages = gsap.utils.toArray('.about-images, .img-main, .contact-img, .cat-box:nth-child(1)');
+    const fadeRightImages = gsap.utils.toArray('.about-text, .contact-img, .cat-box:nth-child(1)');
     fadeRightImages.forEach(el => {
         gsap.from(el, {
             scrollTrigger: { trigger: el, start: "top 85%" },
@@ -88,7 +92,7 @@ window.addEventListener('load', () => {
     });
 
     // Images appearing from right (fade-left)
-    const fadeLeftImages = gsap.utils.toArray('.about-img, .story-video, .cat-box:nth-child(3)');
+    const fadeLeftImages = gsap.utils.toArray('.about-images, .about-img, .story-video, .cat-box:nth-child(3)');
     fadeLeftImages.forEach(el => {
         gsap.from(el, {
             scrollTrigger: { trigger: el, start: "top 85%" },

@@ -82,35 +82,35 @@
         <p class="cat-showcase-sub">Explore our specialized categories designed for athletes and fitness enthusiasts. Find the perfect gear tailored to your training goals and elevate your daily performance.</p>
         
         <div class="cat-grid">
-            <a href="#" class="cat-box bg-yellow">
+            <a href="404.html" class="cat-box bg-yellow">
                 <img src="images/cat_bag.webp" alt="Gym Bag">
                 <div>
                     <h4>BLACK SPORTS BAG</h4>
                     <p>Gym Bag</p>
                 </div>
             </a>
-            <a href="#" class="cat-box bg-orange">
+            <a href="404.html" class="cat-box bg-orange">
                 <img src="images/cat_shoe_men.webp" alt="Running Shoe">
                 <div>
                     <h4>RUNNING SHOE</h4>
                     <p>Men's Shoe</p>
                 </div>
             </a>
-            <a href="#" class="cat-box bg-blue">
+            <a href="404.html" class="cat-box bg-blue">
                 <img src="images/cat_dumbbell.webp" alt="Dumbbells">
                 <div>
                     <h4>DUMBBELLS</h4>
                     <p>Body Building</p>
                 </div>
             </a>
-            <a href="#" class="cat-box bg-pink">
+            <a href="404.html" class="cat-box bg-pink">
                 <img src="images/cat_gym_wear.webp" alt="Gym Wears">
                 <div>
                     <h4>GYM WEARS</h4>
                     <p>Athletic Fitness</p>
                 </div>
             </a>
-            <a href="#" class="cat-box bg-orange">
+            <a href="404.html" class="cat-box bg-orange">
                 <img src="images/cat_shoe_women.webp" alt="Running Shoe">
                 <div>
                     <h4>RUNNING SHOE</h4>
@@ -121,38 +121,52 @@
     </section>
 
     <section class="shop-layout container">
-        <aside class="shop-sidebar">
-            <div class="filter-group">
-                <input type="text" id="shop-search" placeholder="Search products..." style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd; outline:none;">
-                <h4>Category</h4>
-                <ul class="filter-list">
-                    <li><label><input type="radio" name="cat" value="all" checked> All Categories</label></li>
-                    <li><label><input type="radio" name="cat" value="Sportswear"> Sportswear</label></li>
-                    <li><label><input type="radio" name="cat" value="Footwear"> Footwear</label></li>
-                    <li><label><input type="radio" name="cat" value="Equipment"> Equipment</label></li>
-                    <li><label><input type="radio" name="cat" value="Accessories"> Accessories</label></li>
-                </ul>
+        <aside class="shop-filters-wrapper">
+    <div class="shop-filters-grid">
+        <!-- Search -->
+        <div class="filter-col">
+            <label for="shop-search">Search</label>
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="shop-search" placeholder="Search products...">
             </div>
-            <div class="filter-group">
-                <h4>Gender</h4>
-                <ul class="filter-list">
-                    <li><label><input type="radio" name="gender" value="all" checked> All</label></li>
-                    <li><label><input type="radio" name="gender" value="Men"> Men</label></li>
-                    <li><label><input type="radio" name="gender" value="Women"> Women</label></li>
-                    <li><label><input type="radio" name="gender" value="Unisex"> Unisex</label></li>
-                </ul>
+        </div>
+
+        <!-- Category -->
+        <div class="filter-col">
+            <label for="shop-category">Category</label>
+            <select id="shop-category" class="filter-select">
+                <option value="all">All Categories</option>
+                <option value="Sportswear">Sportswear</option>
+                <option value="Footwear">Footwear</option>
+                <option value="Equipment">Equipment</option>
+                <option value="Accessories">Accessories</option>
+            </select>
+        </div>
+
+        <!-- Price -->
+        <div class="filter-col">
+            <label for="shop-price">Price</label>
+            <select id="shop-price" class="filter-select">
+                <option value="all">Price Range</option>
+                <option value="0-2500">Under $2,500</option>
+                <option value="2500-5000">$2,500 - $5,000</option>
+                <option value="5000-100000">Above $5,000</option>
+            </select>
+        </div>
+
+        <!-- Gender -->
+        <div class="filter-col">
+            <label>Gender</label>
+            <div class="gender-pills">
+                <label class="gender-pill"><input type="radio" name="gender" value="all" checked><span>All</span></label>
+                <label class="gender-pill"><input type="radio" name="gender" value="Men"><span>Men</span></label>
+                <label class="gender-pill"><input type="radio" name="gender" value="Women"><span>Women</span></label>
+                <label class="gender-pill"><input type="radio" name="gender" value="Kids"><span>Kids</span></label>
             </div>
-            <div class="filter-group">
-                <h4>Price</h4>
-                <ul class="filter-list">
-                    <li><label><input type="radio" name="price" value="all" checked> All Prices</label></li>
-                    <li><label><input type="radio" name="price" value="0-1000"> Under $1,000</label></li>
-                    <li><label><input type="radio" name="price" value="1000-2500"> $1,000 - $2,500</label></li>
-                    <li><label><input type="radio" name="price" value="2500-5000"> $2,500 - $5,000</label></li>
-                    <li><label><input type="radio" name="price" value="5000-100000"> Above $5,000</label></li>
-                </ul>
-            </div>
-        </aside>
+        </div>
+    </div>
+</aside>
         <div class="shop-main">
             <div class="shop-top-bar" style="display:flex; justify-content:space-between; margin-bottom:20px;">
                 <span id="product-count">Showing results</span>

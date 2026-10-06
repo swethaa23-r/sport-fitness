@@ -150,24 +150,21 @@ window.renderProductCard = function(product) {
     const wishIcon = isWished ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
     
     return `
-        <div class="product-card" data-aos="fade-up">
-            <div class="product-img-wrap">
-                <img src="${product.img}" alt="${product.name}">
-                <div class="hover-btn-wrap">
-                    
-                    <div class="action-icons">
-                        <button class="icon-btn" onclick="toggleWishlist(${product.id})"><i class="${wishIcon}"></i></button>
-                        <button class="icon-btn" onclick="addToCart(${product.id})"><i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
+        <div class="product-card" data-aos="fade-up" style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+            <div class="product-img-wrap" style="position:relative; width:100%; height:250px; overflow:hidden;">
+                <img src="${product.img}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover;">
+                <div class="sale-badge-small" style="position:absolute; top:10px; right:10px; background:var(--primary-color); color:white; padding:2px 8px; font-size:10px; border-radius:3px; display:${product.isSale ? 'block' : 'none'};">SALE</div>
+                <div class="action-icons" style="position:absolute; top:10px; left:10px; display:flex; flex-direction:column; gap:5px;">
+                    <button class="icon-btn" onclick="toggleWishlist(${product.id})" style="background:white; border:none; border-radius:50%; width:30px; height:30px; cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><i class="${wishIcon}" style="color:var(--primary-color);"></i></button>
                 </div>
             </div>
-            <div class="product-info-new">
-                
-                <h3 class="product-title-new">${product.name}</h3>
-                <div class="product-price-new">PRICE '${product.price}</div>
-                <div class="product-rating-new">
-                    <span class="stars">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</span> <span class="rev-count">(32)</span>
+            <div class="product-info-new" style="padding:15px; display:flex; flex-direction:column; gap:10px; flex-grow:1;">
+                <h3 class="product-title-new" style="margin:0; font-size:16px; font-weight:600; line-height:1.3;">${product.name}</h3>
+                <div class="product-price-new" style="font-weight:bold; color:var(--primary-color); font-size:15px;">$${product.price.toFixed(2)}</div>
+                <div class="product-rating-new" style="font-size:12px; color:#f39c12;">
+                    ${'<i class="fa-solid fa-star"></i>'.repeat(Math.floor(product.rating))}${'<i class="fa-regular fa-star"></i>'.repeat(5 - Math.floor(product.rating))} <span style="color:#999;">(32)</span>
                 </div>
+                <button onclick="addToCart(${product.id})" class="btn btn-primary" style="margin-top:auto; width:100%; padding:10px; text-align:center; display:block;">Add to Cart</button>
             </div>
         </div>
     `;
@@ -207,8 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const search = (urlParams.get('search') || document.getElementById('shop-search')?.value || "").toLowerCase();
             
-            const cat = document.querySelector('input[name="cat"]:checked')?.value || 'all';
-            const price = document.querySelector('input[name="price"]:checked')?.value || 'all';
+            const cat = document.getElementById('shop-category')?.value || document.querySelector('input[name="cat"]:checked')?.value || 'all';
+            const price = document.getElementById('shop-price')?.value || document.querySelector('input[name="price"]:checked')?.value || 'all';
             const gender = document.querySelector('input[name="gender"]:checked')?.value || 'all';
             const ratingFilter = parseFloat(document.querySelector('input[name="rating"]:checked')?.value || 0);
             
@@ -254,7 +251,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         renderShop();
         
-        document.querySelectorAll('.filter-list input').forEach(el => el.addEventListener('change', renderShop));
+        document.querySelectorAll('.filter-list input, .gender-pill input').forEach(el => el.addEventListener('change', renderShop));
+        document.getElementById('shop-category')?.addEventListener('change', renderShop);
+        document.getElementById('shop-price')?.addEventListener('change', renderShop);
         document.getElementById('sort-select')?.addEventListener('change', renderShop);
         document.getElementById('shop-search')?.addEventListener('input', renderShop);
     }
@@ -694,14 +693,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const animateCounters = () => {
         counters.forEach(counter => {
+            let current = 0;
             const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
                 const inc = target / speed;
-
                 const suffix = counter.getAttribute('data-suffix') || '';
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc) + suffix;
+                
+                if (current < target) {
+                    current += inc;
+                    counter.innerText = Math.ceil(current) + suffix;
                     setTimeout(updateCount, 15);
                 } else {
                     counter.innerText = target + suffix;
@@ -731,7 +731,7 @@ window.calculateBMI = function() {
     const res = document.getElementById('bmi-result');
     
     if (!weight || !heightCm) {
-        res.innerText = "Please enter valid weight and height.";
+        res.innerHTML = "Please enter valid weight and height.";
         res.style.color = "#ff4444";
         return;
     }
@@ -745,8 +745,12 @@ window.calculateBMI = function() {
     else if (bmi >= 25 && bmi <= 29.9) status = "Overweight";
     else status = "Obese";
     
-    res.innerText = `Your BMI is ${bmi} (${status})`;
-    res.style.color = "#00e676";
+    res.style.color = "white";
+    res.innerHTML = `Your BMI is <span>${bmi}</span> (${status})`;
+    
+    if(typeof gsap !== 'undefined') {
+        gsap.fromTo(res, {scale: 0.8, opacity: 0}, {scale: 1, opacity: 1, duration: 0.5, ease:"back.out(1.5)"});
+    }
 };
 
 // Make product images toggle hover-btn-wrap on mobile/click
