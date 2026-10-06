@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
 
     // A. Section headings, Paragraphs, Buttons → fade-up
     // Note: We skip elements already animated in hero (.hero-anim)
-    const fadeUpElements = gsap.utils.toArray('h2:not(.hero-anim), h3:not(.hero-anim), h4:not(.hero-anim), .section-header, p:not(.hero-anim), .btn:not(.hero-anim)');
+    const fadeUpElements = gsap.utils.toArray('h2:not(.hero-anim), h3:not(.hero-anim), h4:not(.hero-anim), .section-header, p:not(.hero-anim), .btn:not(.hero-anim):not(.navbar .btn)');
     fadeUpElements.forEach(el => {
         // Prevent double animating things inside containers that stagger
         if(el.closest('.product-card') || el.closest('.srv-item') || el.closest('.blog-card')) return;
