@@ -3082,3 +3082,6 @@ img {
 
 /* Fix Sticky Header Disappearing on Menu Open */
 body.no-scroll .navbar { position: fixed !important; top: 0 !important; width: 100% !important; }
+
+/* Fix Auth Form Mobile Stacking */
+@media (max-width: 768px) { .auth-form form > div { flex-direction: column !important; } }
