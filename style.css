@@ -3071,3 +3071,8 @@ img {
 .hero-text-area, .hero-text-area a.btn { position: relative !important; z-index: 9999 !important; pointer-events: auto !important; }
 
 .decor-shape, .hero-overlay, .hero-bg { pointer-events: none !important; }
+
+/* Force Gear Up Button Visibility to override any GSAP bugs */
+@media (max-width: 768px) { .hero-text-area a.btn { opacity: 1 !important; visibility: visible !important; transform: none !important; display: inline-block !important; margin-top: 20px !important; } }
+
+.hero-text-area a.btn { opacity: 1 !important; visibility: visible !important; transform: none !important; }
