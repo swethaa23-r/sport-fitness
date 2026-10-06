@@ -621,9 +621,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         window.openMenu = function() {
-            hamburger.classList.add('active');
-            navLinks.classList.add('active');
-            navOverlay.classList.add('active');
+            document.querySelector('.hamburger').classList.add('active');
+            document.querySelector('.nav-links').classList.add('active');
+            document.querySelector('.nav-overlay').classList.add('active');
             document.body.classList.add('no-scroll');
             
             // GSAP stagger animation for nav links when opening
@@ -636,14 +636,14 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         window.closeMenu = function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            navOverlay.classList.remove('active');
+            document.querySelector('.hamburger').classList.remove('active');
+            document.querySelector('.nav-links').classList.remove('active');
+            document.querySelector('.nav-overlay').classList.remove('active');
             document.body.classList.remove('no-scroll');
         };
 
         window.toggleMenu = function() {
-            if (navLinks.classList.contains('active')) {
+            if (document.querySelector('.nav-links').classList.contains('active')) {
                 closeMenu();
             } else {
                 openMenu();
