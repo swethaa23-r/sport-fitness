@@ -436,7 +436,7 @@ ul {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply removed */
 }
 .product-info .brand {
     font-size: 10px;
@@ -2271,7 +2271,7 @@ body.dark-page {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply removed */
 }
 
 /* Hover effect elements */
@@ -2402,7 +2402,7 @@ body.dark-page {
 .cat-grid .cat-box img {
     max-height: 140px;
     object-fit: contain;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply removed */
 }
 .cat-grid .cat-box h4 {
     color: #333;
@@ -3060,3 +3060,14 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
+/* Fix Gear Up Button Click on Mobile */
+@media (max-width: 768px) { .hero-text-area { z-index: 20 !important; } .hero-image-area { pointer-events: none; } .sale-badge { pointer-events: auto; } }
+
+/* Fix Hero Desktop Overlap */
+@media (min-width: 769px) { .hero { min-height: 85vh; height: auto !important; padding: 120px 0; } }
+
+/* Force Gear Up Button Clickability */
+.hero-text-area, .hero-text-area a.btn { position: relative !important; z-index: 9999 !important; pointer-events: auto !important; }
+
+.decor-shape, .hero-overlay, .hero-bg { pointer-events: none !important; }
