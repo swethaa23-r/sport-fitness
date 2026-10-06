@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Stackly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .dash-section { display: none; animation: fadeIn 0.3s; }
+        .dash-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .content-block { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 30px; }
+    </style>
+</head>
+<body class="dashboard-body">
+    <div class="nav-overlay"></div>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar (Exactly 5 items) -->
+        <aside class="dash-sidebar">
+            <div class="dash-logo-area">
+                <div style="display:flex; align-items:center; gap:10px; cursor:pointer;" onclick="window.location.href='index.html'"><img src="logo.webp" alt="Stackly" style="height:30px;"><span class="role-badge">ADMIN</span></div>
+                <i class="fa-solid fa-xmark close-sidebar"></i>
+            </div>
+            <ul class="dash-nav">
+                <li><a href="#" class="dash-nav-link active" data-target="dash-overview"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-products"><i class="fa-solid fa-box"></i> Products</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-orders"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-customers"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            </ul>
+            <div class="logout-btn">
+                <a href="#" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dash-main">
+            <!-- Topbar -->
+            <header class="dash-topbar">
+                <div class="dash-toggle"><i class="fa-solid fa-bars"></i></div>
+                <div class="dash-mobile-logo" style="cursor:pointer;" onclick="window.location.href='index.html'"><img src="logo.webp" alt="Stackly" style="height:30px;"></div>
+                <div class="dash-search">
+                    <form id="dash-search-form-a" novalidate onsubmit="validateTopSearch(event, this)" style="display:flex; align-items:center; position:relative;">
+                        <input type="text" id="dash-top-search-a" placeholder="Search..." style="border:1px solid #ddd; padding:8px 30px 8px 15px; border-radius:20px; width:250px; outline:none;">
+                        <button type="submit" style="position:absolute; right:10px; background:none; border:none; color:#888; cursor:pointer;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <div class="dash-user-area">
+                    <div class="dash-icon" onclick="window.location.href='404.html'"><i class="fa-regular fa-bell"></i><span class="badge">4</span></div>
+                    <div class="dash-profile">
+                        <i class="fa-solid fa-user-circle" style="font-size: 32px; color: #111;"></i>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="dash-content">
+
+                <!-- 1. OVERVIEW SUBPAGE -->
+                <div id="dash-overview" class="dash-section active">
+                    <!-- Section 1: Header -->
+                    <div class="dash-header">
+                        <h2>Overview</h2>
+                        <a href="404.html" class="btn">+ Add Product</a>
+                    </div>
+                    <!-- Section 2: KPIs -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><h4>Sales</h4><h2>$2,45,680</h2><i class="fa-solid fa-wallet kpi-icon"></i></div>
+                        <div class="kpi-card"><h4>Orders</h4><h2>1,248</h2><i class="fa-solid fa-box kpi-icon"></i></div>
+                        <div class="kpi-card"><h4>Customers</h4><h2>856</h2><i class="fa-solid fa-users kpi-icon"></i></div>
+                        <div class="kpi-card"><h4>Products</h4><h2>324</h2><i class="fa-solid fa-tags kpi-icon"></i></div>
+                    </div>
+                    <!-- Section 3: Charts -->
+                    <div class="chart-grid">
+                        <div class="chart-card">
+                            <h3>Sales Performance</h3>
+                            <div class="chart-container"><canvas id="salesChart"></canvas></div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Order Analytics</h3>
+                            <div class="chart-container"><canvas id="orderChart"></canvas></div>
+                        </div>
+                    </div>
+                    <!-- Section 4: Quick Actions -->
+                    <div class="content-block" style="text-align:center;">
+                        <h3>Quick Actions</h3>
+                        <div style="margin-top:15px; display:flex; gap:10px; justify-content:center;">
+                            <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px;">Generate Report</button>
+                            <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px;">Manage Inventory</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. PRODUCTS SUBPAGE -->
+                <div id="dash-products" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>Products Management</h2><button onclick="window.location.href='404.html'" class="btn">+ New Product</button></div>
+                    <!-- Section 2 -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><h4>Total Items</h4><h2>324</h2></div>
+                        <div class="kpi-card"><h4>Low Stock</h4><h2>12</h2></div>
+                        <div class="kpi-card"><h4>Categories</h4><h2>8</h2></div>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="table-card">
+                        <h3>Product List</h3>
+                        <table class="dash-table">
+                            <thead><tr><th>Item</th><th>Price</th><th>Stock</th><th>Action</th></tr></thead>
+                            <tbody>
+                                <tr><td>Running Shoes</td><td>$2499</td><td><span class="status-badge status-delivered">45 In Stock</span></td><td><button onclick="window.location.href='404.html'">Edit</button></td></tr>
+                                <tr><td>Yoga Mat</td><td>$999</td><td><span class="status-badge status-pending">2 Low Stock</span></td><td><button onclick="window.location.href='404.html'">Edit</button></td></tr>
+                                <tr><td>Dumbbells 10kg</td><td>$4999</td><td><span class="status-badge status-delivered">20 In Stock</span></td><td><button onclick="window.location.href='404.html'">Edit</button></td></tr>
+                                <tr><td>Resistance Bands</td><td>$599</td><td><span class="status-badge status-delivered">100 In Stock</span></td><td><button onclick="window.location.href='404.html'">Edit</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block">
+                        <h3>Bulk Import</h3>
+                        <p>Import products from CSV file.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:10px;">Upload CSV</button>
+                    </div>
+                </div>
+
+                <!-- 3. ORDERS SUBPAGE -->
+                <div id="dash-orders" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>Orders Management</h2><button onclick="window.location.href='404.html'" class="btn">Export Orders</button></div>
+                    <!-- Section 2 -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><h4>Pending</h4><h2>27</h2></div>
+                        <div class="kpi-card"><h4>Shipped</h4><h2>145</h2></div>
+                        <div class="kpi-card"><h4>Returned</h4><h2>3</h2></div>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="table-card">
+                        <h3>Recent Orders</h3>
+                        <table class="dash-table">
+                            <thead><tr><th>ID</th><th>Customer</th><th>Amount</th><th>Action</th></tr></thead>
+                            <tbody>
+                                <tr><td>#ORD10245</td><td>Arun Kumar</td><td>$2,499</td><td><button onclick="window.location.href='404.html'">View</button></td></tr>
+                                <tr><td>#ORD10246</td><td>Sneha Reddy</td><td>$999</td><td><button onclick="window.location.href='404.html'">View</button></td></tr>
+                                <tr><td>#ORD10247</td><td>Rajesh Kumar</td><td>$1,599</td><td><button onclick="window.location.href='404.html'">View</button></td></tr>
+                                <tr><td>#ORD10248</td><td>Priya Sharma</td><td>$3,200</td><td><button onclick="window.location.href='404.html'">View</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block">
+                        <h3>Shipping Partners</h3>
+                        <p>Manage API integrations with shipping providers.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px; margin-top:10px;">Configure APIs</button>
+                    </div>
+                </div>
+
+                <!-- 4. CUSTOMERS SUBPAGE -->
+                <div id="dash-customers" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>Customer Management</h2><button onclick="window.location.href='404.html'" class="btn">Send Mass Email</button></div>
+                    <!-- Section 2 -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><h4>Total Customers</h4><h2>856</h2></div>
+                        <div class="kpi-card"><h4>Active (30d)</h4><h2>412</h2></div>
+                        <div class="kpi-card"><h4>New (7d)</h4><h2>34</h2></div>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="table-card">
+                        <h3>Customer List</h3>
+                        <table class="dash-table">
+                            <thead><tr><th>Name</th><th>Email</th><th>Total Spent</th><th>Action</th></tr></thead>
+                            <tbody>
+                                <tr><td>Arun Kumar</td><td>arun@example.com</td><td>$12,450</td><td><button onclick="window.location.href='404.html'">View Profile</button></td></tr>
+                                <tr><td>Sneha Reddy</td><td>sneha@example.com</td><td>$4,200</td><td><button onclick="window.location.href='404.html'">View Profile</button></td></tr>
+                                <tr><td>Rajesh Kumar</td><td>rajesh@example.com</td><td>$8,900</td><td><button onclick="window.location.href='404.html'">View Profile</button></td></tr>
+                                <tr><td>Priya Sharma</td><td>priya@example.com</td><td>$6,100</td><td><button onclick="window.location.href='404.html'">View Profile</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block">
+                        <h3>Customer Support Tickets</h3>
+                        <p>You have 5 unresolved tickets.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:10px;">Open Support Desk</button>
+                    </div>
+                </div>
+
+                <!-- 5. SETTINGS SUBPAGE -->
+                <div id="dash-settings" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>Store Settings</h2></div>
+                    <!-- Section 2 -->
+                    <div class="content-block">
+                        <h3>General Info</h3>
+                        <input type="text" value="Stackly Sports & Fitness Store" style="width:100%; padding:10px; margin:10px 0;">
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px;">Save Changes</button>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="content-block">
+                        <h3>Payment Gateways</h3>
+                        <p>Configure Stripe, Razorpay, or PayPal integrations.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px;">Setup Payments</button>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block" style="border-left:4px solid #e21e2c;">
+                        <h3>Danger Zone</h3>
+                        <p style="color:#666;">Actions here cannot be undone.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px; margin-top:10px;">Factory Reset Store</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <div class="dash-overlay"></div>
+    </div>
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/gsap-animations.js?v=21"></script>
+
+    <script src="script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+
+

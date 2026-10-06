@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Stackly Sports & Fitness Store</title>
+    <link rel="stylesheet" href="style.css?v=21">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body style="background: #f9f9f9;">
+    <div class="nav-overlay"></div>
+
+    
+
+    
+    <section class="container" style="padding:60px 20px; display:flex; justify-content:center; align-items:center; min-height:100vh;">
+    <div class="auth-form" style="max-width: 600px; width:100%; background:#fff; padding:40px; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+        <div style="text-align: center; margin-bottom: 20px;"><a href="index.html"><img src="logo.webp" alt="Stackly Logo" style="height: 40px; width: auto;"></a></div>
+        <h2 style="font-weight:900; margin-bottom:10px; text-align: center;">Create an Account</h2>
+        <p style="color:#666; margin-bottom:30px; font-size:14px; text-align: center;">Join Stackly to track orders and save your wishlist.</p>
+        <form id="reg-form" novalidate>
+            <div style="position: relative; margin-bottom: 15px;">
+                <select id="reg-role" style="width:100%; padding:15px 15px 15px 45px; border:1px solid #ddd; outline:none; border-radius:5px; appearance:none; box-sizing: border-box; background: #fff;">
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="customer">Customer</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <i class="fa-solid fa-user" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                <i class="fa-solid fa-chevron-down" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #888; pointer-events: none;"></i>
+            </div>
+            <div style="display:flex; gap:15px; margin-bottom:15px;">
+                <div style="position:relative; flex:1;">
+                    <input type="text" id="reg-name" placeholder="Full Name" style="width:100%; padding:15px 15px 15px 45px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                    <i class="fa-solid fa-id-badge" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                </div>
+                <div style="position:relative; flex:1;">
+                    <input type="email" id="reg-email" placeholder="Email Address" style="width:100%; padding:15px 15px 15px 45px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                    <i class="fa-solid fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                </div>
+            </div>
+            <div style="display:flex; gap:15px; margin-bottom:15px;">
+                <div style="position:relative; flex:1;">
+                    <input type="text" id="reg-phone" placeholder="Phone Number" style="width:100%; padding:15px 15px 15px 45px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                    <i class="fa-solid fa-phone" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                </div>
+                <div style="position:relative; flex:2;">
+                    <input type="text" id="reg-address" placeholder="Address" style="width:100%; padding:15px 15px 15px 45px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                    <i class="fa-solid fa-location-dot" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                </div>
+            </div>
+            <div style="display:flex; gap:15px; margin-bottom:15px;">
+                <input type="text" id="reg-city" placeholder="City" style="flex:1; padding:15px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                <input type="text" id="reg-state" placeholder="State" style="flex:1; padding:15px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                <input type="text" id="reg-pin" placeholder="Pincode" style="flex:1; padding:15px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+            </div>
+            <div style="display:flex; gap:15px; margin-bottom:20px;">
+                <div style="position:relative; flex:1;">
+                    <input type="password" id="reg-pass" placeholder="Password" style="width:100%; padding:15px 45px 15px 45px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                    <i class="fa-solid fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                    <i class="fa-solid fa-eye" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #888; cursor: pointer;" onclick="const p=document.getElementById('reg-pass'); if(p.type==='password'){p.type='text'; this.classList.remove('fa-eye'); this.classList.add('fa-eye-slash');}else{p.type='password'; this.classList.remove('fa-eye-slash'); this.classList.add('fa-eye');}"></i>
+                </div>
+                <div style="position:relative; flex:1;">
+                    <input type="password" id="reg-conf" placeholder="Confirm Password" style="width:100%; padding:15px 45px 15px 45px; border:1px solid #ddd; outline:none; border-radius:5px; box-sizing: border-box;">
+                    <i class="fa-solid fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                    <i class="fa-solid fa-eye" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #888; cursor: pointer;" onclick="const p=document.getElementById('reg-conf'); if(p.type==='password'){p.type='text'; this.classList.remove('fa-eye'); this.classList.add('fa-eye-slash');}else{p.type='password'; this.classList.remove('fa-eye-slash'); this.classList.add('fa-eye');}"></i>
+                </div>
+            </div>
+            <button type="button" class="btn" style="width:100%; background:#e21e2c; color:white; padding:15px; border:none; border-radius:5px; font-weight:bold; cursor:pointer; box-sizing: border-box;" onclick="validateRegister()">SIGN UP</button>
+            <p style="margin-top:20px; text-align:center; font-size:14px;">Already have an account? <a href="login.html" style="color:#e21e2c; text-decoration:none; font-weight:bold;">Log In</a></p>
+            <p style="margin-top:10px; text-align:center; font-size:14px;"><a href="index.html" style="color:#666; text-decoration:none;">Back to Home</a></p>
+        </form>
+        <script>
+                function validateRegister() {
+            const roleEl = document.getElementById('reg-role');
+            const nameEl = document.getElementById('reg-name');
+            const emailEl = document.getElementById('reg-email');
+            const passEl = document.getElementById('reg-pass');
+            const confEl = document.getElementById('reg-conf');
+            
+            const fields = [roleEl, nameEl, emailEl, passEl, confEl];
+            let firstInvalid = null;
+            let isValid = true;
+            
+            fields.forEach(f => {
+                const err = typeof getFieldError === 'function' ? getFieldError(f) : null;
+                if(err) {
+                    showError(f, err);
+                    isValid = false;
+                    if(!firstInvalid) firstInvalid = f;
+                } else {
+                    clearError(f);
+                }
+            });
+            
+            if(!isValid && firstInvalid) {
+                firstInvalid.focus();
+                firstInvalid.scrollIntoView({behavior: 'smooth', block: 'center'});
+            } else if(isValid) {
+                if(roleEl.value === 'admin') window.location.href = 'admin-dashboard.html';
+                else window.location.href = 'customer-dashboard.html';
+            }
+        }
+        </script>
+    </div>
+    </section>
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/gsap-animations.js?v=21"></script>
+
+    <script src="js/script.js?v=21"></script>
+</body>
+</html>
+
+

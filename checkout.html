@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Fitness & Gym Wear</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css?v=21">
+</head>
+<body>
+    <div class="nav-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="logo.webp" alt="Stackly Logo" style="height: 40px; width: auto;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="wishlist.html" title="Wishlist" style="position:relative; text-decoration: none;">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="wishlist-count" style="position:absolute; top:-8px; right:-10px; background:#e21e2c; color:#fff; font-size:10px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius:50%; font-weight:bold;">0</span>
+                </a>
+                <a href="cart.html" title="Cart" style="position:relative; text-decoration: none; margin-right: 15px;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" style="position:absolute; top:-8px; right:-10px; background:#e21e2c; color:#fff; font-size:10px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius:50%; font-weight:bold;">0</span>
+                </a>
+                <a href="login.html" class="btn btn-primary">Log In</a>
+            </div>
+              <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+        </div>
+    </nav>
+    <section class="container" style="padding:60px 20px;">
+        <div id="checkout-form-container" style="display:grid; grid-template-columns:1.5fr 1fr; gap:40px;">
+            <div class="checkout-form" style="background:#fff; padding:40px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border-radius:8px;">
+                <h3 style="font-weight:900; margin-bottom:20px;">Delivery Address</h3>
+                <form id="checkout-form" novalidate>
+                    <input type="text" placeholder="Full Name" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd;">
+                    <input type="text" placeholder="Phone Number" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd;">
+                    <input type="text" placeholder="Address" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd;">
+                    <div style="display:flex; gap:15px; margin-bottom:30px;">
+                        <input type="text" placeholder="City" required style="width:100%; padding:10px; border:1px solid #ddd;">
+                        <input type="text" placeholder="Pincode" required style="width:100%; padding:10px; border:1px solid #ddd;">
+                    </div>
+                    
+                    <h3 style="font-weight:900; margin-bottom:20px;">Payment Method</h3>
+                    <label style="display:block; margin-bottom:10px; cursor:pointer;"><input type="radio" name="payment" checked> Cash on Delivery</label>
+                    <label style="display:block; margin-bottom:10px; cursor:pointer;"><input type="radio" name="payment"> UPI</label>
+                    <label style="display:block; margin-bottom:30px; cursor:pointer;"><input type="radio" name="payment"> Credit / Debit Card</label>
+                    
+                    <button type="submit" class="btn" style="width:100%; background:#e21e2c; color:white; padding:15px; border:none; font-weight:bold; cursor:pointer;">PLACE ORDER</button>
+                </form>
+            </div>
+            <div class="checkout-summary" style="background:#f9f9f9; padding:30px; border-radius:8px; align-self:start;">
+                <h3 style="font-weight:900; margin-bottom:20px;">Order Summary</h3>
+                <div id="checkout-items"></div>
+                <div style="display:flex; justify-content:space-between; margin-top:20px; font-size:20px; font-weight:900; border-top:1px solid #ddd; padding-top:20px;">
+                    <span>Total</span> <strong id="checkout-total" style="color:#e21e2c;">$0</strong>
+                </div>
+            </div>
+        </div>
+        
+        <div id="order-success" style="display:none; text-align:center; padding:100px 20px;">
+            <i class="fa-solid fa-circle-check" style="font-size:60px; color:#8bc34a; margin-bottom:20px;"></i>
+            <h1 style="font-weight:900; margin-bottom:10px;">Order Placed Successfully!</h1>
+            <p style="font-size:18px; color:#666; margin-bottom:20px;">Your Order ID is <strong id="demo-order-id" style="color:#111;"></strong></p>
+            <p style="margin-bottom:30px;">Thank you for shopping with Stackly Sports & Fitness Store.</p>
+            <a href="404.html" class="btn" style="background:#111; color:white; padding:10px 20px; text-decoration:none;">View My Orders</a>
+            <a href="shop.html" class="btn" style="background:#e21e2c; color:white; padding:10px 20px; text-decoration:none; margin-left:10px;">Continue Shopping</a>
+        </div>
+    </section>
+
+    <!-- Features Bar Section -->
+    <section class="features-bar bg-dark" style="padding: 40px 0; border-bottom: 1px solid #222; margin-top: 40px;">
+        <div class="container">
+            <div class="row" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center;">
+                <div>
+                    <i class="fa-solid fa-truck-fast" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">FREE SHIPPING</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-rotate-left" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">EASY RETURNS</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-shield-halved" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">SECURE PAYMENT</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-medal" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">QUALITY PRODUCTS</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Brands Section -->
+    <section class="brands-section" style="background:#fff; padding: 40px 0; border-top:1px solid #eee;">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; opacity:0.6; flex-wrap:wrap;">
+            <h2 style="font-size:24px; font-weight:900; color:#333;">STACKFIT</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">PROGEAR</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">ATHLEX</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">FITCORE</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">IRONLIFT</h2>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col" style="padding-left: 0; margin-left: 0;">
+                <h2 class="footer-logo" style="margin-left: 0; padding-left: 0;"><img src="logo.webp" alt="Stackly Logo" style="height: 40px; width: auto;"></h2>
+                <p style="margin-top: 15px; margin-bottom: 15px; color: #999;">Elevate your workout with our premium sportswear and expert guidance.</p>
+                <ul style="padding-left: 0;">
+                    <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, Near Chinnamaniyappan Kovil, Salem 636008</li>
+                    <li><i class="fa-solid fa-phone"></i> 9090909090</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SPORTS</h4>
+                <ul>
+                    <li><a href="404.html">Running</a></li>
+                    <li><a href="404.html">Football</a></li>
+                    <li><a href="404.html">Gym/Training</a></li>
+                    <li><a href="404.html">Tennis</a></li>
+                    <li><a href="404.html">Outdoor</a></li>
+                    <li><a href="404.html">Basketball</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="404.html">Help</a></li>
+                    <li><a href="404.html">Customer Services</a></li>
+                    <li><a href="404.html">Returns & Exchanges</a></li>
+                    <li><a href="404.html">Shipping</a></li>
+                    <li><a href="404.html">Order Tracker</a></li>
+                    <li><a href="404.html">Store Locator</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>NEWSLETTER</h4>
+                <p>Subscribe to our newsletter for the latest sportswear collections, exclusive fitness offers, and expert training tips.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Email Address">
+                    <button type="button" class="btn btn-primary" onclick="validateNewsletter(this)">SUBSCRIBE</button>
+                </form>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-stripe"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+        <!-- Custom JS -->
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/gsap-animations.js?v=21"></script>
+
+    <script src="script.js?v=21"></script>
+</body>
+</html>
+
+
+

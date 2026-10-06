@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Blog</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css?v=21">
+</head>
+<body>
+    <div class="nav-overlay"></div>
+
+    <!-- PREMIUM PRELOADER -->
+    <div id="premium-preloader" aria-live="polite" aria-busy="true">
+        <div class="preloader-inner">
+            <div class="speed-lines">
+                <div class="speed-line speed-line-1"></div>
+                <div class="speed-line speed-line-2"></div>
+                <div class="speed-line speed-line-3"></div>
+            </div>
+            <div class="loader-logo-container">
+                <svg class="performance-ring" viewBox="0 0 100 100">
+                    <circle class="ring-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="ring-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="loader-logo">STACKLY</div>
+            </div>
+            <div class="brand-name">SPORTS & FITNESS</div>
+            <div class="loading-message" id="dynamic-load-msg">Power Your Performance</div>
+            <div class="loader-progress">
+                <span id="loaderPercentage">0%</span>
+            </div>
+        </div>
+    </div>
+    <!-- END PREMIUM PRELOADER -->
+
+
+    <!-- Navigation -->
+    <nav class="navbar" style="background: #111;">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="logo.webp" alt="Stackly Logo" style="height: 40px; width: auto;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="wishlist.html" title="Wishlist" style="position:relative; text-decoration: none;">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="wishlist-count" style="position:absolute; top:-8px; right:-10px; background:#e21e2c; color:#fff; font-size:10px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius:50%; font-weight:bold;">0</span>
+                </a>
+                <a href="cart.html" title="Cart" style="position:relative; text-decoration: none; margin-right: 15px;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" style="position:absolute; top:-8px; right:-10px; background:#e21e2c; color:#fff; font-size:10px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius:50%; font-weight:bold;">0</span>
+                </a>
+                <a href="login.html" class="btn btn-primary">Log In</a>
+            </div>
+              <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/img_016.webp') center/cover;">
+        <h1>Our Blog</h1>
+        <div class="breadcrumb">Home / <span>Blog</span></div>
+    </header>
+
+    <!-- Blog Layout -->
+    <section class="container blog-layout">
+        
+        <!-- Main Feed -->
+        <div class="blog-main">
+            <div class="blog-feed">
+                <!-- Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_003.webp" alt="Blog Image">
+                        <div class="blog-date">JAN 12, 2026</div>
+                    </div>
+                    <span class="blog-cat">GYM WORKOUTS</span>
+                    <h3>Best Running Shoes for Beginners</h3>
+                    <p>Discover the most effective pre-workout routines to maximize your energy and endurance during heavy lifting sessions.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_002.webp" alt="Blog Image">
+                        <div class="blog-date">FEB 04, 2026</div>
+                    </div>
+                    <span class="blog-cat">CARDIO</span>
+                    <h3>How to Choose the Right Gym Equipment</h3>
+                    <p>Learn the science behind muscle recovery and why getting enough sleep is crucial for your overall athletic performance.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_001.webp" alt="Blog Image">
+                        <div class="blog-date">MAR 18, 2026</div>
+                    </div>
+                    <span class="blog-cat">MUSCULAR ENDURANCE</span>
+                    <h3>Benefits of Regular Exercise</h3>
+                    <p>Uncover the top 5 running shoes of the year, tested and reviewed by professional marathon runners and athletes.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+                
+                <!-- Post 4 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_004.webp" alt="Blog Image">
+                        <div class="blog-date">APR 22, 2026</div>
+                    </div>
+                    <span class="blog-cat">WEIGHT LIFT</span>
+                    <h3>Beginner's Guide to Strength Training</h3>
+                    <p>Find out how to balance your macronutrients to fuel your workouts and achieve your body composition goals faster.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+
+                <!-- Post 5 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_017.webp" alt="Blog Image">
+                        <div class="blog-date">MAY 09, 2026</div>
+                    </div>
+                    <span class="blog-cat">WEIGHT LIFT</span>
+                    <h3>How to Build a Home Workout Setup</h3>
+                    <p>Explore the benefits of high-intensity interval training (HIIT) and how it can transform your cardiovascular health.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+                
+                <!-- Post 6 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_018.webp" alt="Blog Image">
+                        <div class="blog-date">JUN 30, 2026</div>
+                    </div>
+                    <span class="blog-cat">WEIGHT LIFT</span>
+                    <h3>Sportswear Buying Guide</h3>
+                    <p>Get expert advice on preventing common gym injuries by improving your mobility, flexibility, and lifting technique.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+                
+                <!-- Post 7 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_007.webp" alt="Blog Image">
+                        <div class="blog-date">JUL 11, 2026</div>
+                    </div>
+                    <span class="blog-cat">WEIGHT LIFT</span>
+                    <h3>Nutrition Pre-Workout Fundamentals</h3>
+                    <p>Read our comprehensive guide on choosing the right supplements to support your specific fitness and health objectives.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+
+                <!-- Post 8 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_006.webp" alt="Blog Image">
+                        <div class="blog-date">AUG 15, 2026</div>
+                    </div>
+                    <span class="blog-cat">WEIGHT LIFT</span>
+                    <h3>Cardio vs Weightlifting Differences</h3>
+                    <p>Dive into the mental aspect of sports and learn how to build the discipline needed to stay consistent year-round.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+                
+                <!-- Post 9 -->
+                <div class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="images/img_005.webp" alt="Blog Image">
+                        <div class="blog-date">SEP 03, 2026</div>
+                    </div>
+                    <span class="blog-cat">WEIGHT LIFT</span>
+                    <h3>Stretching & Active Recovery Tips</h3>
+                    <p>Check out our latest interview with top fitness coaches on how to break through frustrating strength training plateaus.</p>
+                    <a href="404.html" class="read-more-link">Read More &gt;</a>
+                </div>
+                
+                <!-- Pagination -->
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="blog-sidebar">
+            
+                        <div class="sidebar-search">
+                <input type="text" id="blog-search-input" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass" onclick="validateBlogSearch()" style="cursor:pointer;"></i>
+            </div>
+            
+            <!-- Category Widget -->
+            <div class="blog-widget">
+                <div class="widget-title">CATEGORY</div>
+                <ul class="cat-list-blog">
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Powerbuilding <span>41</span></li>
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Low-intensity cardio <span>26</span></li>
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Yoga Classes <span>45</span></li>
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Arms and abs <span>32</span></li>
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Seated Dumbbell <span>15</span></li>
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Strength training <span>33</span></li>
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Cable Rope Triceps <span>25</span></li>
+                    <li onclick="window.location.href='404.html'" style="cursor:pointer;">Flat barbell bench <span>48</span></li>
+                </ul>
+            </div>
+            
+            <!-- Recent Cases Widget -->
+            <div class="blog-widget">
+                <div class="widget-title">RECENT CASES</div>
+                <div class="recent-list">
+                    <div class="recent-item">
+                        <img src="images/img_019.webp" alt="Thumb">
+                        <div>
+                            <h4>The Best Places To Start Your Website Coding</h4>
+                            <div class="date">OCT 10, 2026</div>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <img src="images/img_020.webp" alt="Thumb">
+                        <div>
+                            <h4>Essential Warm-up Routines for Peak Performance</h4>
+                            <div class="date">NOV 05, 2026</div>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <img src="images/img_021.webp" alt="Thumb">
+                        <div>
+                            <h4>Integer Gravida Ligula Finibus Efficitur</h4>
+                            <div class="date">DEC 20, 2026</div>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <img src="images/img_022.webp" alt="Thumb">
+                        <div>
+                            <h4>How to Choose the Right Footwear for Running</h4>
+                            <div class="date">JAN 25, 2027</div>
+                        </div>
+                    </div>
+                    <div class="recent-item">
+                        <img src="images/img_023.webp" alt="Thumb">
+                        <div>
+                            <h4>Top 10 High-Protein Snacks for Muscle Recovery</h4>
+                            <div class="date">FEB 14, 2027</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tags Widget -->
+            <div class="blog-widget">
+                <div class="widget-title">TAGS</div>
+                <div class="tag-cloud">
+                    <span class="tag active" onclick="window.location.href='404.html'" style="cursor:pointer;">Compressure</span>
+                    <span class="tag" onclick="window.location.href='404.html'" style="cursor:pointer;">Hafti Gas</span>
+                    <span class="tag" onclick="window.location.href='404.html'" style="cursor:pointer;">Remote Control</span>
+                    <span class="tag" onclick="window.location.href='404.html'" style="cursor:pointer;">Condenser</span>
+                    <span class="tag" onclick="window.location.href='404.html'" style="cursor:pointer;">Cooling Coil</span>
+                    <span class="tag" onclick="window.location.href='404.html'" style="cursor:pointer;">Blower</span>
+                    <span class="tag" onclick="window.location.href='404.html'" style="cursor:pointer;">Air Filter</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <!-- Features Bar Section -->
+    <section class="features-bar bg-dark" style="padding: 40px 0; border-bottom: 1px solid #222; margin-top: 40px;">
+        <div class="container">
+            <div class="row" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center;">
+                <div>
+                    <i class="fa-solid fa-truck-fast" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">FREE SHIPPING</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-rotate-left" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">EASY RETURNS</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-shield-halved" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">SECURE PAYMENT</h4>
+                </div>
+                <div>
+                    <i class="fa-solid fa-medal" style="font-size:30px; color:var(--primary-color); margin-bottom:15px;"></i>
+                    <h4 style="color:#fff; font-size:16px;">QUALITY PRODUCTS</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Brands Section -->
+    <section class="brands-section" style="background:#fff; padding: 40px 0; border-top:1px solid #eee;">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; opacity:0.6; flex-wrap:wrap;">
+            <h2 style="font-size:24px; font-weight:900; color:#333;">STACKFIT</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">PROGEAR</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">ATHLEX</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">FITCORE</h2>
+            <h2 style="font-size:24px; font-weight:900; color:#333;">IRONLIFT</h2>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col" style="padding-left: 0; margin-left: 0;">
+                <h2 class="footer-logo" style="margin-left: 0; padding-left: 0;"><img src="logo.webp" alt="Stackly Logo" style="height: 40px; width: auto;"></h2>
+                <p style="margin-top: 15px; margin-bottom: 15px; color: #999;">Elevate your workout with our premium sportswear and expert guidance.</p>
+                <ul style="padding-left: 0;">
+                    <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, Near Chinnamaniyappan Kovil, Salem 636008</li>
+                    <li><i class="fa-solid fa-phone"></i> 9090909090</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SPORTS</h4>
+                <ul>
+                    <li><a href="404.html">Running</a></li>
+                    <li><a href="404.html">Football</a></li>
+                    <li><a href="404.html">Gym/Training</a></li>
+                    <li><a href="404.html">Tennis</a></li>
+                    <li><a href="404.html">Outdoor</a></li>
+                    <li><a href="404.html">Basketball</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="404.html">Help</a></li>
+                    <li><a href="404.html">Customer Services</a></li>
+                    <li><a href="404.html">Returns & Exchanges</a></li>
+                    <li><a href="404.html">Shipping</a></li>
+                    <li><a href="404.html">Order Tracker</a></li>
+                    <li><a href="404.html">Store Locator</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>NEWSLETTER</h4>
+                <p>Subscribe to our newsletter for the latest sportswear collections, exclusive fitness offers, and expert training tips.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Email Address">
+                    <button type="button" class="btn btn-primary" onclick="validateNewsletter(this)">SUBSCRIBE</button>
+                </form>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-stripe"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+        <!-- Custom JS -->
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/gsap-animations.js?v=21"></script>
+
+    <script src="script.js?v=21"></script>
+</body>
+</html>
+
+

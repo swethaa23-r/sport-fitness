@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Stackly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <style>
+        .dash-section { display: none; animation: fadeIn 0.3s; }
+        .dash-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .content-block { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 30px; }
+    </style>
+</head>
+<body class="dashboard-body">
+    <div class="nav-overlay"></div>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar (Exactly 5 items) -->
+        <aside class="dash-sidebar">
+            <div class="dash-logo-area">
+                <div style="display:flex; align-items:center; gap:10px; cursor:pointer;" onclick="window.location.href='index.html'"><img src="logo.webp" alt="Stackly" style="height:30px;"><span class="role-badge">CUSTOMER</span></div>
+                <i class="fa-solid fa-xmark close-sidebar"></i>
+            </div>
+            <ul class="dash-nav">
+                <li><a href="#" class="dash-nav-link active" data-target="dash-overview"><i class="fa-solid fa-user"></i> Dashboard</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-orders"><i class="fa-solid fa-box-open"></i> My Orders</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-wishlist"><i class="fa-solid fa-heart"></i> Wishlist</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-addresses"><i class="fa-solid fa-location-dot"></i> Addresses</a></li>
+                <li><a href="#" class="dash-nav-link" data-target="dash-settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            </ul>
+            <div class="logout-btn">
+                <a href="#" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dash-main">
+            <!-- Topbar -->
+            <header class="dash-topbar">
+                <div class="dash-toggle"><i class="fa-solid fa-bars"></i></div>
+                <div class="dash-mobile-logo" style="cursor:pointer;" onclick="window.location.href='index.html'"><img src="logo.webp" alt="Stackly" style="height:30px;"></div>
+                <div class="dash-search">
+                    <form id="dash-search-form-c" novalidate onsubmit="validateTopSearch(event, this)" style="display:flex; align-items:center; position:relative;">
+                        <input type="text" id="dash-top-search-c" placeholder="Search..." style="border:1px solid #ddd; padding:8px 30px 8px 15px; border-radius:20px; width:250px; outline:none;">
+                        <button type="submit" style="position:absolute; right:10px; background:none; border:none; color:#888; cursor:pointer;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <div class="dash-user-area">
+                    <div class="dash-icon" onclick="window.location.href='404.html'"><i class="fa-regular fa-bell"></i><span class="badge">2</span></div>
+                    <div class="dash-profile">
+                        <i class="fa-solid fa-circle-user" style="font-size:36px; color:#111;"></i>
+                        <span id="welcome-name">Customer</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="dash-content">
+
+                <!-- 1. OVERVIEW SUBPAGE -->
+                <div id="dash-overview" class="dash-section active">
+                    <!-- Section 1 -->
+                    <div class="dash-header">
+                        <div>
+                            <h2>Welcome back!</h2>
+                            <p style="color:#666; margin-top:5px; font-size:14px;">Ready for your next workout?</p>
+                        </div>
+                        <button onclick="window.location.href='404.html'" class="btn">SHOP NOW</button>
+                    </div>
+                    <!-- Section 2 -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><h4>Total Orders</h4><h2>24</h2><i class="fa-solid fa-bag-shopping kpi-icon"></i></div>
+                        <div class="kpi-card"><h4>Pending</h4><h2>2</h2><i class="fa-solid fa-clock-rotate-left kpi-icon"></i></div>
+                        <div class="kpi-card"><h4>Wishlist</h4><h2>8</h2><i class="fa-solid fa-heart kpi-icon"></i></div>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="table-card" style="margin-bottom:30px;">
+                        <h3>Active Order: #ORD10245</h3>
+                        <div class="order-tracking">
+                            <div class="tracking-step active"><div class="tracking-icon"><i class="fa-solid fa-check"></i></div><div class="tracking-title">Placed</div></div>
+                            <div class="tracking-step active"><div class="tracking-icon"><i class="fa-solid fa-box"></i></div><div class="tracking-title">Packed</div></div>
+                            <div class="tracking-step"><div class="tracking-icon"><i class="fa-solid fa-truck-fast"></i></div><div class="tracking-title">Shipped</div></div>
+                            <div class="tracking-step"><div class="tracking-icon"><i class="fa-solid fa-house"></i></div><div class="tracking-title">Delivered</div></div>
+                        </div>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block" style="text-align:center;">
+                        <h3>Earn Rewards</h3>
+                        <p>Refer a friend and get 20% off your next purchase!</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px; margin-top:15px;">Get Referral Link</button>
+                    </div>
+                    <!-- Section 5 -->
+                    <div class="content-block">
+                        <h3>Your Fitness Goal</h3>
+                        <p style="margin-bottom:10px;">Lose 5kg in 3 months (60% Completed)</p>
+                        <div style="width:100%; background:#eee; height:10px; border-radius:5px;"><div style="width:60%; background:#e21e2c; height:10px; border-radius:5px;"></div></div>
+                    </div>
+                    <!-- Section 6 -->
+                    <div class="content-block" style="text-align:center;">
+                        <h3>Recent Achievements</h3>
+                        <p>You've unlocked the "Consistent Buyer" badge!</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:15px;">View Badges</button>
+                    </div>
+                </div>
+
+                <!-- 2. ORDERS SUBPAGE -->
+                <div id="dash-orders" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>Order History</h2><button onclick="window.location.href='404.html'" class="btn">Track an Order</button></div>
+                    <!-- Section 2 -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><h4>Lifetime Spent</h4><h2>$45,200</h2></div>
+                        <div class="kpi-card"><h4>Total Items</h4><h2>56</h2></div>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="table-card">
+                        <table class="dash-table">
+                            <thead><tr><th>ID</th><th>Products</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+                            <tbody>
+                                <tr><td>#ORD10245</td><td>Running Shoes</td><td>$2,499</td><td><span class="status-badge status-pending">Processing</span></td><td><button onclick="window.location.href='404.html'">View</button></td></tr>
+                                <tr><td>#ORD10200</td><td>Yoga Mat</td><td>$999</td><td><span class="status-badge status-delivered">Delivered</span></td><td><button onclick="window.location.href='404.html'">Reorder</button></td></tr>
+                                <tr><td>#ORD10195</td><td>Dumbbells 10kg</td><td>$499</td><td><span class="status-badge status-delivered">Delivered</span></td><td><button onclick="window.location.href='404.html'">Reorder</button></td></tr>
+                                <tr><td>#ORD10180</td><td>Gym T-Shirt</td><td>$299</td><td><span class="status-badge status-delivered">Delivered</span></td><td><button onclick="window.location.href='404.html'">Reorder</button></td></tr>
+                                <tr><td>#ORD10150</td><td>Protein Powder</td><td>$3,999</td><td><span class="status-badge status-delivered">Delivered</span></td><td><button onclick="window.location.href='404.html'">Reorder</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block" style="text-align:center;">
+                        <h3>Need Help with an Order?</h3>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:10px;">Contact Support</button>
+                    </div>
+                    <!-- Section 5 -->
+                    <div class="content-block">
+                        <h3>Returns & Exchanges</h3>
+                        <p>Initiate a return for delivered items within 30 days.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px; margin-top:10px;">Start a Return</button>
+                    </div>
+                    <!-- Section 6 -->
+                    <div class="content-block">
+                        <h3>Download Invoices</h3>
+                        <p>Get PDF invoices for all your previous orders.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:10px;">Download Center</button>
+                    </div>
+                </div>
+
+                <!-- 3. WISHLIST SUBPAGE -->
+                <div id="dash-wishlist" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>My Wishlist</h2><button onclick="window.location.href='404.html'" class="btn">Add All to Cart</button></div>
+                    <!-- Section 2 -->
+                    <div class="content-block">
+                        <p>You have 2 items saved in your wishlist. Grab them before they sell out!</p>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="table-card">
+                        <table class="dash-table">
+                            <thead><tr><th>Product</th><th>Price</th><th>Action</th></tr></thead>
+                            <tbody>
+                                <tr><td>Dumbbells (10kg)</td><td>$4,999</td><td><button onclick="window.location.href='404.html'">Add to Cart</button></td></tr>
+                                <tr><td>Sports Backpack</td><td>$1,999</td><td><button onclick="window.location.href='404.html'">Add to Cart</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block" style="text-align:center;">
+                        <h3>Discover More</h3>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px; margin-top:10px;">View Recommended Products</button>
+                    </div>
+                    <!-- Section 5 -->
+                    <div class="content-block">
+                        <h3>Price Drop Alerts</h3>
+                        <p>You have 1 item on your wishlist that recently dropped in price!</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px; margin-top:10px;">View Alert</button>
+                    </div>
+                    <!-- Section 6 -->
+                    <div class="content-block">
+                        <h3>Share Wishlist</h3>
+                        <p>Share your favorite products with friends and family.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:10px;">Share Now</button>
+                    </div>
+                </div>
+
+                <!-- 4. ADDRESSES SUBPAGE -->
+                <div id="dash-addresses" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>Saved Addresses</h2><button onclick="window.location.href='404.html'" class="btn">+ New Address</button></div>
+                    <!-- Section 2 -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card" style="border-left:4px solid #111;">
+                            <h4>Home (Default)</h4>
+                            <p style="margin-top:10px; font-size:14px; line-height:1.6;">123 Fitness Street<br>Chennai, Tamil Nadu<br>600001</p>
+                            <button onclick="window.location.href='404.html'" style="margin-top:10px; color:#e21e2c; border:none; background:none; cursor:pointer;">Edit</button>
+                        </div>
+                        <div class="kpi-card" style="border-left:4px solid #ddd;">
+                            <h4>Work</h4>
+                            <p style="margin-top:10px; font-size:14px; line-height:1.6;">45 Tech Park<br>Chennai, Tamil Nadu<br>600113</p>
+                            <button onclick="window.location.href='404.html'" style="margin-top:10px; color:#e21e2c; border:none; background:none; cursor:pointer;">Edit</button>
+                        </div>
+                    </div>
+                    <!-- Section 3 -->
+                    <div class="content-block">
+                        <h3>Delivery Preferences</h3>
+                        <p>Leave packages at the door.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:5px 15px; margin-top:10px;">Update</button>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block" style="background:#f9f9f9;">
+                        <h3>Shipping Policy</h3>
+                        <p style="color:#666; font-size:14px;">We deliver within 3-5 business days across India.</p>
+                        <a href="404.html" style="color:#e21e2c; text-decoration:none; display:inline-block; margin-top:10px;">Read full policy &rarr;</a>
+                    </div>
+                    <!-- Section 5 -->
+                    <div class="content-block">
+                        <h3>Billing Addresses</h3>
+                        <p>Manage addresses used for your payment invoices.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px; margin-top:10px;">Manage Billing</button>
+                    </div>
+                    <!-- Section 6 -->
+                    <div class="content-block">
+                        <h3>Store Pickup Locations</h3>
+                        <p>Prefer to pick up your order? Find a Stackly store near you.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:10px;">Find Store</button>
+                    </div>
+                </div>
+
+                <!-- 5. SETTINGS SUBPAGE -->
+                <div id="dash-settings" class="dash-section">
+                    <!-- Section 1 -->
+                    <div class="dash-header"><h2>Account Settings</h2><button onclick="window.location.href='404.html'" class="btn">Delete Account</button></div>
+                    <!-- Section 2 -->
+                    <div class="content-block">
+                        <h3>Profile Information</h3>
+                        <form id="profile-form" novalidate onsubmit="event.preventDefault(); window.location.href='404.html'">
+                            <input type="text" id="prof-name" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd;">
+                            <input type="email" id="prof-email" placeholder="Email Address" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd;">
+                            <button type="submit" class="btn" style="background:#111; color:#fff; padding:10px; cursor:pointer; border:none;">Update Profile</button>
+                        </form>
+                    </div>
+                    <!-- Section 3 -->
+                                        <div class="content-block">
+                        <h3>Change Password</h3>
+                        <form id="password-form" novalidate onsubmit="event.preventDefault(); window.location.href='404.html'">
+                            <input type="password" id="pass-curr" placeholder="Current Password" required style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd;">
+                            <input type="password" id="pass-new" placeholder="New Password" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd;">
+                            <button type="submit" class="btn" style="background:#111; color:#fff; padding:10px; cursor:pointer; border:none;">Update Password</button>
+                        </form>
+                    </div>
+                    <!-- Section 4 -->
+                    <div class="content-block">
+                        <h3>Email Notifications</h3>
+                        <label style="display:block; margin-bottom:10px;"><input type="checkbox" checked> Order Updates</label>
+                        <label style="display:block; margin-bottom:10px;"><input type="checkbox" checked> Promotional Offers</label>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px; margin-top:10px;">Save Preferences</button>
+                    </div>
+                    <!-- Section 5 -->
+                    <div class="content-block">
+                        <h3>Two-Factor Authentication</h3>
+                        <p>Enhance your account security by enabling 2FA.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#e21e2c; color:#fff; padding:10px 20px; margin-top:10px;">Enable 2FA</button>
+                    </div>
+                    <!-- Section 6 -->
+                    <div class="content-block">
+                        <h3>Privacy Settings</h3>
+                        <p>Control what data is collected and how it is used.</p>
+                        <button onclick="window.location.href='404.html'" class="btn" style="background:#111; color:#fff; padding:10px 20px; margin-top:10px;">Manage Privacy</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <div class="dash-overlay"></div>
+    </div>
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/gsap-animations.js?v=21"></script>
+
+    <script src="script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+
+

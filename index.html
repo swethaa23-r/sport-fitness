@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Fitness & Gym Wear</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css?v=21">
+</head>
+<body>
+    <div class="nav-overlay"></div>
+
+    <!-- PREMIUM PRELOADER -->
+    <div id="premium-preloader" aria-live="polite" aria-busy="true">
+        <div class="preloader-inner">
+            <div class="speed-lines">
+                <div class="speed-line speed-line-1"></div>
+                <div class="speed-line speed-line-2"></div>
+                <div class="speed-line speed-line-3"></div>
+            </div>
+            <div class="loader-logo-container">
+                <svg class="performance-ring" viewBox="0 0 100 100">
+                    <circle class="ring-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="ring-progress" cx="50" cy="50" r="45"></circle>
+                </svg>
+                <div class="loader-logo">STACKLY</div>
+            </div>
+            <div class="brand-name">SPORTS & FITNESS</div>
+            <div class="loading-message" id="dynamic-load-msg">Power Your Performance</div>
+            <div class="loader-progress">
+                <span id="loaderPercentage">0%</span>
+            </div>
+        </div>
+    </div>
+    <!-- END PREMIUM PRELOADER -->
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="logo.webp" alt="Stackly Logo" style="height: 40px; width: auto;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="wishlist.html" title="Wishlist" style="position:relative; text-decoration: none;">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="wishlist-count" style="position:absolute; top:-8px; right:-10px; background:#e21e2c; color:#fff; font-size:10px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius:50%; font-weight:bold;">0</span>
+                </a>
+                <a href="cart.html" title="Cart" style="position:relative; text-decoration: none; margin-right: 15px;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" style="position:absolute; top:-8px; right:-10px; background:#e21e2c; color:#fff; font-size:10px; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius:50%; font-weight:bold;">0</span>
+                </a>
+                <a href="login.html" class="btn btn-primary">Log In</a>
+            </div>
+              <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <!-- Floating Decorative Elements -->
+        <div class="decor-shape decor-1"></div>
+        <div class="decor-shape decor-2"></div>
+        <div class="decor-shape decor-3"></div>
+
+        <div class="container hero-content" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+            <div class="hero-text-area" style="max-width: 600px; position: relative; z-index: 5;">
+                <h4 class="subtitle hero-anim">RAGE YOUR</h4>
+                <h1 class="title hero-anim">EXPRESS YOURSELF <br> IN <span class="highlight">TRENDY</span> GYM WEAR</h1>
+                <p class="description hero-anim">Discover premium sportswear and top-tier fitness equipment designed to elevate your performance. Gear up and crush your workout goals today.</p>
+                <div class="hero-anim"><a href="404.html" class="btn btn-primary btn-large">Gear Up</a></div>
+            </div>
+            
+            <!-- Main sports product/athlete image -->
+            <div class="hero-image-area hero-anim-img" style="position: relative; z-index: 5;">
+                <!-- Shoe removed per request -->
+                <div class="sale-badge" style="position: relative; right: 100px; top: 20px;">
+                    <span>30%<br>OFF SALE</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="cat-box" style="background-image: url('images/img_032.webp');">
+            <div class="cat-content">
+                <h3>MEN</h3>
+                <h2>SHOP MEN</h2>
+                <a href="404.html" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+        <div class="cat-box active-cat" style="background-image: url('images/img_026.webp');">
+            <div class="cat-overlay"></div>
+            <div class="cat-content">
+                <h3>WOMEN</h3>
+                <h2>SHOP WOMEN</h2>
+                <p>Experience unmatched comfort and durability with our latest performance collections.</p>
+                <a href="404.html" class="btn btn-dark">Shop Now</a>
+            </div>
+        </div>
+        <div class="cat-box" style="background-image: url('images/img_033.webp');">
+            <div class="cat-content">
+                <h3>KIDS</h3>
+                <h2>SHOP KIDS</h2>
+                <a href="404.html" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about container">
+        <div class="about-text">
+            <h4 class="subtitle-dark">ABOUT US</h4>
+            <h2>Make yourself stronger<br>than your excuses</h2>
+            <p>Browse our hand-picked selection of top-tier apparel designed for modern athletes. Discover premium collections designed to help you break personal records and train with confidence.</p>
+            <div class="about-actions">
+                <a href="about.html" class="btn btn-primary">Know More</a>
+                <a href="contact.html" class="btn btn-primary" style="margin-left: 20px; background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color);">Contact Us</a>
+            </div>
+        </div>
+        <div class="about-images">
+            <div class="img-main" style="position: relative;">
+                <img src="images/img_034.webp" alt="Fitness Woman">
+                <div class="play-btn" onclick="window.location.href='404.html'" style="cursor:pointer; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <div class="img-grid">
+                <img src="images/img_002.webp" alt="Fitness Man 1">
+                <img src="images/img_017.webp" alt="Fitness Man 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Video Section -->
+    <section class="promo" style="background-image: url('images/img_035.webp');">
+        <div class="promo-overlay"></div>
+        <div class="container promo-content">
+            <h4 class="subtitle">RAGE YOUR</h4>
+            <h2>DON'T HOPE FOR IT. WORK FOR IT.</h2>
+            <p>Push your limits with our scientifically designed athletic wear.<br> We combine cutting-edge breathable fabrics with modern aesthetics.<br> Every product is rigorously tested for peak performance.</p>
+            <a href="404.html" class="btn btn-primary">More Videos</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products container">
+        <div class="text-center">
+            <h4 class="subtitle-dark">RAE YOURSELF</h4>
+            <h2>Featured Products</h2>
+            <p class="section-desc">Explore the latest trends in fitness fashion and upgrade your workout wardrobe.</p>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="images/img_007.webp" alt="Green Dumbbells">
+                </div>
+                <div class="product-info">
+                    <span class="brand">JORDAN</span>
+                    <div class="price-row">
+                        <h3>Green Dumbbells</h3>
+                        <span class="price">$320.00</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="images/img_005.webp" alt="White Track Pant">
+                </div>
+                <div class="product-info">
+                    <span class="brand">JORDAN</span>
+                    <div class="price-row">
+                        <h3>White Track Pant</h3>
+                        <span class="price">$320.00</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="images/img_008.webp" alt="Water Bottle">
+                </div>
+                <div class="product-info">
+                    <span class="brand">JORDAN</span>
+                    <div class="price-row">
+                        <h3>Water Bottle</h3>
+                        <span class="price">$320.00</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="images/img_006.webp" alt="Black Vest">
+                </div>
+                <div class="product-info">
+                    <span class="brand">JORDAN</span>
+                    <div class="price-row">
+                        <h3>Black Vest</h3>
+                        <span class="price">$320.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Section -->
+    <section class="quality-section">
+        <div class="quality-overlay"></div>
+        <div class="container quality-container">
+            <div class="quality-text">
+                <h4 class="subtitle">LET'S GET</h4>
+                <h2 style="color: white; font-size: 32px; margin-bottom: 20px;">The Quality You Expect, The<br>Service You Deserve!</h2>
+                <p style="color: #bbb; margin-bottom: 30px;">Discover the true potential of your body with <span style="color: var(--primary-color);">Advanced Training Gear</span>. Elevate every run, lift, and stretch.</p>
+                
+                <div class="quality-list">
+                    <ul>
+                        <li><i class="fa-solid fa-play"></i> Premium Quality Materials</li>
+                        <li><i class="fa-solid fa-play"></i> Nutritional Advice Sodales</li>
+                        <li><i class="fa-solid fa-play"></i> Customized Workouts turpis non</li>
+                    </ul>
+                    <ul>
+                        <li><i class="fa-solid fa-play"></i> Premium Quality Materials</li>
+                        <li><i class="fa-solid fa-play"></i> Nutritional Advice Sodales</li>
+                        <li><i class="fa-solid fa-play"></i> Customized Workouts turpis non</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="quality-img">
+                <img src="images/img_015.webp" alt="Man with battle ropes">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container benefits-container">
+            <div class="benefits-img">
+                <img src="images/img_036.webp" alt="Personal Trainer">
+            </div>
+            <div class="benefits-text">
+                <h4 class="subtitle">OUR BENEFITS</h4>
+                <h2 style="color: white; font-size: 32px; margin-bottom: 20px;">Exercise Improves Mood <span class="highlight">&bull;</span> Exercise Boosts Energy</h2>
+                <p style="color: #bbb; margin-bottom: 30px;">Our equipment is built to last. Whether you are building a home gym or outfitting a commercial facility, our extensive range of weights, racks, and machines will support your heaviest lifts and longest cardio sessions. Train with confidence.</p>
+                <a href="404.html" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="trainers-section container">
+        <div class="trainers-grid">
+            <div class="trainer-text">
+                <h4 class="subtitle-dark">TRAINERS</h4>
+                <h2 style="font-size: 32px; margin-bottom: 20px;">Move Your Body, Shape <br><span class="highlight">YOUR FUTURE & FOR FITNESS,</span><br>Performance and Life</h2>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Read what our community of fitness enthusiasts has to say about our premium products. Integer lacus ligula, imperdiet vel massa.</p>
+                <a href="404.html" class="btn btn-primary">Book Your Trainer</a>
+            </div>
+            
+            <div class="trainer-card" onclick="this.classList.toggle('active')">
+                <img src="images/trainer_new_1.webp" alt="Trainer 1">
+                <div class="trainer-overlay">
+                    <h3>John Doe</h3>
+                    <div class="social-icons">
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card" onclick="this.classList.toggle('active')">
+                <img src="images/trainer_new_2.webp" alt="Trainer 2">
+                <div class="trainer-overlay">
+                    <h3>Jane Smith</h3>
+                    <div class="social-icons">
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card" onclick="this.classList.toggle('active')">
+                <img src="images/trainer_new_3.webp" alt="Trainer 3">
+                <div class="trainer-overlay">
+                    <h3>Mike Ross</h3>
+                    <div class="social-icons">
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card" onclick="this.classList.toggle('active')">
+                <img src="images/trainer_new_4.webp" alt="Trainer 4">
+                <div class="trainer-overlay">
+                    <h3>Rachel Zane</h3>
+                    <div class="social-icons">
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card" onclick="this.classList.toggle('active')">
+                <img src="images/trainer_new_5.webp" alt="Trainer 5">
+                <div class="trainer-overlay">
+                    <h3>Harvey Specter</h3>
+                    <div class="social-icons">
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html" style="color:white;"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="choose-us container">
+        <div class="choose-img-wrapper">
+            <div class="blob-bg"></div>
+            <img src="images/img_037.webp" alt="Training" class="main-choose-img">
+            <div class="play-btn-red" onclick="window.location.href='404.html'" style="cursor:pointer;"><i class="fa-solid fa-play"></i></div>
+            <div class="review-badge">
+                <div class="badge-left">Excellent</div>
+                <div class="badge-right">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <small>See our 25,456 Reviews</small>
+                </div>
+            </div>
+        </div>
+        <div class="choose-text">
+            <h4 class="subtitle-dark">WHY CHOOSE US</h4>
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Helping You to <span class="highlight">Take Fitness</span> to The Top Level</h2>
+            <p style="color: var(--text-muted); margin-bottom: 40px;">Find everything you need to build the ultimate home gym and reach your peak performance. Integer lacus ligula, imperdiet vel massa in, maximus suscipit turpis.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2 class="highlight counter" data-target="13">0</h2>
+                    <p>YEARS OF<br>EXPERIENCE</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="counter" data-target="25">0</h2>
+                    <p>SKILLED<br>TRAINERS</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="counter" data-target="14">0</h2>
+                    <p>BEST OF<br>AWARDS</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="counter" data-target="2" data-suffix="K">0</h2>
+                    <p>OUR BEST<br>WORKS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section class="membership-section">
+        <div class="container">
+            <div class="text-center">
+                <h4 class="subtitle" style="color: var(--primary-color);">RAEYOURSELF</h4>
+                <h2 style="color: white; font-size: 36px; margin-bottom: 10px;">Our Membership Plans</h2>
+                <p style="color: #bbb; max-width: 600px; margin: 0 auto 50px;">Stay updated with the latest tips, guides, and news from the fitness industry. Integer lacus ligula, imperdiet vel massa.</p>
+            </div>
+            <div class="plans-grid">
+                <!-- Plan 1 -->
+                <div class="plan-card">
+                    <div class="plan-left">
+                        <h3>3 Months Membership</h3>
+                        <p>The quality of the gym wear is outstanding. Very breathable and flexible during my heavy lifts.</p>
+                        <span class="plan-note">*Monthly 20 Classes</span>
+                    </div>
+                    <div class="plan-right">
+                        <h2>$39.00</h2>
+                        <small>Per Month</small>
+                        <a href="404.html" class="btn btn-primary">Join Now</a>
+                    </div>
+                </div>
+                <!-- Plan 2 -->
+                <div class="plan-card">
+                    <div class="plan-left">
+                        <h3>3 Months Membership <span class="badge badge-kids">Kids</span></h3>
+                        <p>I've never felt more comfortable running. The shoes have incredible bounce and support.</p>
+                        <span class="plan-note">*Monthly 20 Classes</span>
+                    </div>
+                    <div class="plan-right">
+                        <h2>$19.00</h2>
+                        <small>Per Month</small>
+                        <a href="404.html" class="btn btn-primary">Join Now</a>
+                    </div>
+                </div>
+                <!-- Plan 3 -->
+                <div class="plan-card">
+                    <div class="plan-left">
+                        <h3>6 Months Membership</h3>
+                        <p>Customer service was exceptional. They helped me find the perfect size for my lifting belt.</p>
+                        <span class="plan-note">*Monthly 20 Classes</span>
+                    </div>
+                    <div class="plan-right">
+                        <h2>$69.00</h2>
+                        <small>Per Month</small>
+                        <a href="404.html" class="btn btn-primary">Join Now</a>
+                    </div>
+                </div>
+                <!-- Plan 4 -->
+                <div class="plan-card">
+                    <div class="plan-left">
+                        <h3>6 Months Membership <span class="badge badge-womens">Womens</span></h3>
+                        <p>Highly recommend the sports leggings! They are squat-proof and fit absolutely perfectly.</p>
+                        <span class="plan-note">*Monthly 20 Classes</span>
+                    </div>
+                    <div class="plan-right">
+                        <h2>$59.00</h2>
+                        <small>Per Month</small>
+                        <a href="404.html" class="btn btn-primary">Join Now</a>
+                    </div>
+                </div>
+                <!-- Plan 5 -->
+                <div class="plan-card recommended-pack">
+                    <div class="recommended-label">Recommended Pack</div>
+                    <div class="plan-left">
+                        <h3>12 Months Membership</h3>
+                        <p>Fast shipping and premium quality. The adjustable dumbbells are the perfect addition to my home gym.</p>
+                        <span class="plan-note">*Monthly 20 Classes</span>
+                    </div>
+                    <div class="plan-right">
+                        <h2>$99.00</h2>
+                        <small>Per Month</small>
+                        <a href="404.html" class="btn btn-primary">Join Now</a>
+                    </div>
+                </div>
+                <!-- Plan 6 -->
+                <div class="plan-card">
+                    <div class="plan-left">
+                        <h3>12 Months Membership <span class="badge badge-couples">Couples</span></h3>
+                        <p>The sports bra provides excellent support for high-impact training. Definitely buying another pair.</p>
+                        <span class="plan-note">*Monthly 20 Classes</span>
+                    </div>
+                    <div class="plan-right">
+                        <h2>$149.00</h2>
+                        <small>Per Month</small>
+                        <a href="404.html" class="btn btn-primary">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback / Testimonials -->
+    <section class="testimonials container">
+        <div class="text-center">
+            <h4 class="subtitle-dark">FEEDBACK</h4>
+            <h2>Client's Success Stories</h2>
+        </div>
+        <div class="marquee-wrapper" style="overflow: hidden; white-space: nowrap; padding: 20px 0;">
+          <div class="marquee-content" style="display: inline-flex; gap: 30px; animation: scroll-marquee 20s linear infinite;">
+              <div class="testi-card" style="white-space: normal; width: 350px;">
+                  <div class="testi-image"><img src="images/img_001.webp" alt="Client 1"></div>
+                  <div class="testi-content"><h3>Sophia L.</h3><p>"Amazing quality and super comfortable!"</p></div>
+              </div>
+              <div class="testi-card" style="white-space: normal; width: 350px;">
+                  <div class="testi-image"><img src="images/img_017.webp" alt="Client 2"></div>
+                  <div class="testi-content"><h3>Mark T.</h3><p>"The best gym wear I've ever owned."</p></div>
+              </div>
+              <div class="testi-card" style="white-space: normal; width: 350px;">
+                  <div class="testi-image"><img src="images/img_002.webp" alt="Client 3"></div>
+                  <div class="testi-content"><h3>Jessica W.</h3><p>"Really impressed with the durability."</p></div>
+              </div>
+              <div class="testi-card" style="white-space: normal; width: 350px;">
+                  <div class="testi-image"><img src="images/img_003.webp" alt="Client 4"></div>
+                  <div class="testi-content"><h3>David R.</h3><p>"Outstanding customer service and fast shipping!"</p></div>
+              </div>
+              <div class="testi-card" style="white-space: normal; width: 350px;">
+                  <div class="testi-image"><img src="images/img_018.webp" alt="Client 5"></div>
+                  <div class="testi-content"><h3>Emma S.</h3><p>"I love the fit and the style. Perfect."</p></div>
+              </div>
+              <div class="testi-card" style="white-space: normal; width: 350px;">
+                  <div class="testi-image"><img src="images/img_004.webp" alt="Client 6"></div>
+                  <div class="testi-content"><h3>Chris P.</h3><p>"Will definitely buy more gear from here!"</p></div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <!-- BMI Calculator -->
+    <section class="bmi-section">
+        <div class="bmi-bg-overlay"></div>
+        <div class="container bmi-container">
+            <div class="bmi-text text-center">
+                <h4 class="subtitle">RAEYOURSELF</h4>
+                <h2 style="color: white; margin-bottom: 40px;">Your BMI Calculator</h2>
+            </div>
+            <form class="bmi-form">
+                <div class="form-row">
+                    <input type="number" id="bmi-weight" placeholder="Weight / kg">
+                    <input type="number" id="bmi-height" placeholder="Height / cm">
+                </div>
+                <div class="form-row">
+                    <input type="text" id="bmi-age" placeholder="Age">
+                    <select id="bmi-gender" style="flex:1; padding:15px; border:1px solid #444; background:transparent; color:#fff;">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary" style="width: 100%; margin-top:20px;" onclick="calculateBMI()">Calculate</button>
+                <div id="bmi-result" style="margin-top:20px; color:white; font-size:18px; font-weight:bold;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- News & Blogs -->
+    <section class="news-section container">
+        <div class="text-center">
+            <h4 class="subtitle-dark">READ YOURSELF</h4>
+            <h2>Latest News & Blogs</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 50px;">Discover actionable advice on nutrition, recovery, and effective training routines. Integer lacus ligula, imperdiet vel massa in, maximus.</p>
+        </div>
+        <div class="news-grid">
+            <!-- News 1 -->
+            <div class="news-card">
+                <div class="news-img">
+                    <img src="images/img_003.webp" alt="News">
+                    
+                </div>
+                <div class="news-info">
+                    
+                    <h3>Best Running Shoes for Beginners</h3>
+                    <p>Learn how to optimize your workouts and avoid common injuries with expert insights.</p>
+                    <a href="404.html" class="read-more" style="margin-top:auto;">Read More <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- News 2 -->
+            <div class="news-card">
+                <div class="news-img">
+                    <img src="images/img_002.webp" alt="News">
+                    
+                </div>
+                <div class="news-info">
+                    
+                    <h3>Lower End of the Spectrum</h3>
+                    <p>Get inspired by success stories and transform your lifestyle starting today.</p>
+                    <a href="404.html" class="read-more" style="margin-top:auto;">Read More <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- News 3 -->
+            <div class="news-card">
+                <div class="news-img">
+                    <img src="images/img_001.webp" alt="News">
+                    
+                </div>
+                <div class="news-info">
+                    
+                    <h3>Benefits of Regular Exercise</h3>
+                    <p>Master your form and technique with our comprehensive guides and tutorials.</p>
+                    <a href="404.html" class="read-more" style="margin-top:auto;">Read More <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- News 4 -->
+            <div class="news-card">
+                <div class="news-img">
+                    <img src="images/img_018.webp" alt="News">
+                    
+                </div>
+                <div class="news-info">
+                    
+                    <h3>People usually aim for between fiv...</h3>
+                    <p>Find out which supplements and gear actually work to improve your athletic output.</p>
+                    <a href="404.html" class="read-more" style="margin-top:auto;">Read More <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery -->
+    <section class="insta-section">
+        <div class="text-center" style="margin-bottom: 40px;">
+            <h4 class="subtitle-dark">INSTASHOP</h4>
+            <h2>Follow us on Instagram</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Join a community of motivated individuals dedicated to living a healthier life. Integer lacus ligula, imperdiet vel massa.</p>
+        </div>
+        <div class="insta-grid">
+            <div class="insta-item"><img src="images/img_003.webp" alt="Insta 1"><div class="insta-overlay"><a href="404.html" style="color:var(--primary-color);"><i class="fa-brands fa-instagram"></i></a></div></div>
+            <div class="insta-item"><img src="images/img_004.webp" alt="Insta 2"><div class="insta-overlay"><a href="404.html" style="color:var(--primary-color);"><i class="fa-brands fa-instagram"></i></a></div></div>
+            <div class="insta-item"><img src="images/img_002.webp" alt="Insta 3"><div class="insta-overlay"><a href="404.html" style="color:var(--primary-color);"><i class="fa-brands fa-instagram"></i></a></div></div>
+            <div class="insta-item"><img src="images/img_017.webp" alt="Insta 4"><div class="insta-overlay"><a href="404.html" style="color:var(--primary-color);"><i class="fa-brands fa-instagram"></i></a></div></div>
+        </div>
+    </section>
+
+    <!-- Brands & Features -->
+    <section class="brands-features container">
+        <div class="brands-row">
+            <h2>FITNESS<i class="fa-solid fa-dumbbell" style="margin-left: 5px;"></i></h2>
+            <h2>Botrio</h2>
+            <h2><i class="fa-solid fa-person-running" style="color:#00bcd4; margin-right:5px;"></i> SPORTWINK</h2>
+            <h2>RAVE</h2>
+        </div>
+        <div class="features-row">
+            <div class="feature-item">
+                <i class="fa-solid fa-truck-fast" style="color:var(--primary-color);"></i>
+                <div>
+                    <h4 class="subtitle-dark">FREE</h4>
+                    <h3>Free Shipping</h3>
+                    <p>We offer fast and secure shipping worldwide, ensuring your gear arrives safely and on time.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-rotate-left" style="color:var(--primary-color);"></i>
+                <div>
+                    <h4 class="subtitle-dark">RETURNS</h4>
+                    <h3>24 Days Return Policy</h3>
+                    <p>Not satisfied? Return your items within 24 days for a full refund. We ensure a hassle-free process for our customers.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-gift" style="color:var(--primary-color);"></i>
+                <div>
+                    <h4 class="subtitle-dark">GIFTS</h4>
+                    <h3>Free Coupon Codes</h3>
+                    <p style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Unlock exclusive discounts and seasonal offers. Subscribe to our newsletter to receive free promo codes directly in your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Banner -->
+    <section class="newsletter-banner container">
+        <div class="banner-content text-center">
+            <div class="ribbon">10% OFFER ON 12 MONTH MEMBERSHIP</div>
+            <h2 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">JOIN US A MEMBER & ENJOY OFFERS</h2>
+            <p style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8); font-weight: 500;">Unlock exclusive discounts and perks by joining our premium membership. Enjoy priority access to new releases and special member-only pricing.</p>
+            <form class="banner-form">
+                <input type="email" placeholder="Enter your email...">
+                <button type="button" class="btn btn-primary" onclick="validateNewsletter(this)">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col" style="padding-left: 0; margin-left: 0;">
+                <h2 class="footer-logo" style="margin-left: 0; padding-left: 0;"><img src="logo.webp" alt="Stackly Logo" style="height: 40px; width: auto;"></h2>
+                <p style="margin-top: 15px; margin-bottom: 15px; color: #999;">Elevate your workout with our premium sportswear and expert guidance.</p>
+                <ul style="padding-left: 0;">
+                    <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, Near Chinnamaniyappan Kovil, Salem 636008</li>
+                    <li><i class="fa-solid fa-phone"></i> 9090909090</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SPORTS</h4>
+                <ul>
+                    <li><a href="404.html">Running</a></li>
+                    <li><a href="404.html">Football</a></li>
+                    <li><a href="404.html">Gym/Training</a></li>
+                    <li><a href="404.html">Tennis</a></li>
+                    <li><a href="404.html">Outdoor</a></li>
+                    <li><a href="404.html">Basketball</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="404.html">Help</a></li>
+                    <li><a href="404.html">Customer Services</a></li>
+                    <li><a href="404.html">Returns & Exchanges</a></li>
+                    <li><a href="404.html">Shipping</a></li>
+                    <li><a href="404.html">Order Tracker</a></li>
+                    <li><a href="404.html">Store Locator</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter-col">
+                <h4>NEWSLETTER</h4>
+                <p>Subscribe to our newsletter for the latest sportswear collections, exclusive fitness offers, and expert training tips.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Email Address">
+                    <button type="button" class="btn btn-primary" onclick="validateNewsletter(this)">SUBSCRIBE</button>
+                </form>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-stripe"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+        <!-- Custom JS -->
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/gsap-animations.js?v=21"></script>
+
+    <script src="script.js?v=21"></script>
+</body>
+</html>
+
+
+
