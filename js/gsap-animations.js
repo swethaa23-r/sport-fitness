@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
     const fadeUpElements = gsap.utils.toArray('h2:not(.hero-anim), h3:not(.hero-anim), h4:not(.hero-anim), .section-header, p:not(.hero-anim), .btn:not(.hero-anim):not(.navbar .btn)');
     fadeUpElements.forEach(el => {
         // Prevent double animating things inside containers that stagger
-        if(el.closest('.product-card') || el.closest('.srv-item') || el.closest('.blog-card')) return;
+        if(el.closest('.product-card') || el.closest('.srv-item') || el.closest('.blog-card') || el.closest('.navbar') || el.closest('.hero')) return;
         
         gsap.from(el, {
             scrollTrigger: { trigger: el, start: "top 90%", toggleActions: "play none none none" },
